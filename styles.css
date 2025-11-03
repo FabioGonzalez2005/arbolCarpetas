@@ -1,116 +1,135 @@
-body{
-    font-family: Tahoma;
-    color: #444;
-    letter-spacing: 1px;
-}
-
-h1, h2{
-    font-weight: normal;
-}
-
-#wrapper{
-    width: 90%;
-    max-width: 960px;
-    margin: 20px auto;
-    border-radius: 6px;
-    box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
-    box-sizing: border-box;
-    padding: 0 0 20px;
-    overflow: hidden;
-    border: 1px solid lightgray;
-}
-
-#page-banner{
-    background: #eee ;
-    padding: 10px 0;
-
-}
-
-#page-banner h1, #page-banner p{
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-}
-
-#page-banner input{
-    width: 90%;
-    max-width: 300px;
-    margin: 20px auto;
-    display: block;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    color: #444;
-}
-
-#ex-list, #add-ex, #tabbed-content{
-    margin: 30px;
-}
-
-#ex-list ul, #tabbed-content ul{
-    list-style-type: none;
-    padding: 0;
-}
-
-#ex-list li{
-    padding: 20px;
-    border-left: 5px solid #ddd;
-    margin: 20px 10px;
-}
-
-#ex-list li:hover{
-    border-color: #9361bf;
-}
-
-.delete{
-    float: right;
-    background: #9361bf;
-    padding: 6px;
-    border-radius: 4px;
-    cursor: pointer;
-    color: white;
-}
-
-.delete:hover{
-    background: #333;
-}
-
-#add-ex{
-    width: 400px;
-    margin: 0 auto;
-}
-
-#add-ex input{
-    display: block;
-    margin: 20px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    border-radius: 4px 0 0 4px;
-    box-sizing: border-box;
-    width: 300px;
-    float: left;
-}
-
-#add-ex button{
-    border: 1px solid #9361bf;
-    background: #9361bf;
-    padding: 10px 20px;
-    font-size: 16px;
-    display: inline-block;
+* {
     margin: 0;
-    border-radius: 0 4px 4px 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f2f2f2;
+    color: #333;
+}
+
+#wrapper {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+
+/* Banner */
+#page-banner {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#page-banner .title {
+    font-size: 2.2em;
+    margin-bottom: 5px;
+}
+
+#page-banner p {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Buscador */
+#search-ex {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#search-ex input {
+    padding: 8px 12px;
+    width: 250px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+#search-ex button {
+    padding: 8px 12px;
+    background: #75c579;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    width: 100px;
-    float: left;
-    margin: 20px 0;
-    border-left: 0;
+}
+
+#search-ex button:hover {
+    background: #005fcc;
+}
+
+/* Árbol */
+#tree-container {
+    margin-top: 20px;
+}
+
+#file-tree {
+    list-style-type: none;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+#file-tree li {
+    font-weight: bold;
+}
+
+/* Carpetas y archivos */
+.folder,
+.file {
+    position: relative;
+    margin: 8px 0;
+    padding-left: 25px;
+}
+
+/* Iconos con pseudo-elementos */
+.folder::before {
+    content: "📁";
+    position: absolute;
+    left: 0;
+}
+
+.file::before {
+    content: "📄";
+    position: absolute;
+    left: 0;
+}
+
+/* Botones */
+button {
+    margin-left: 6px;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+button.delete {
+    background: #e63946;
     color: white;
 }
 
-#add-ex:after{
-    content: '';
-    display: block;
-    clear: both;
+button.delete:disabled {
+    background: rgb(200, 200, 200);
+    cursor: not-allowed;
+}
+
+button.add-folder {
+    background: #2a9d8f;
+    color: white;
+}
+
+button:hover:not(:disabled) {
+    opacity: 0.8;
+}
+
+/* Checkbox alineado */
+.folder > input[type="checkbox"] {
+    margin-left: 10px;
+    cursor: pointer;
 }

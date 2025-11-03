@@ -1,6 +1,24 @@
+<!-- Inicialmente solo hay un "/" que representa la carpeta RAÍZ que no se puede borrar. 
+Cada CARPETA tendrá un símbolo "+" a su derecha para agregarle un nuevo archivo o una nueva subcarpeta y un símbolo "X"
+a su izquierda para eliminarlo cuando sea posible. No será posible eliminar una carpeta o subcarpeta si no está vacía.
+
+Cada archivo sólo tendrá una "X" para borrarlo.
+
+Cada Carpeta y Subcarpeta también tendrá una casilla de verificación (marcada de forma predeterminada) al lado del símbolo
+"+" que, cuando está marcada, se muestra el contenido del directorio; de lo contrario, se ocultará.
+
+El archivo o carpeta creado obtendrá su nombre de un cuadro de entrada en el formulario. Si ya existe, no se creará.
+
+Finalmente en otro cuadro del mismo formulario o de otro diferente podrás filtrar todos los archivos o carpetas que coincidan
+con el nombre que ingresas, mostrándose los resultados coincidentes y ocultándose el resto.
+
+Utiliza keyboard y mouse event listeners.
+
+Opcionalmente, cuando presione la tecla TAB dentro de ese cuadro de entrada, el nombre del archivo o carpeta buscado se
+completará automáticamente, pero solo en caso de que haya una única coincidencia del nombre. -->
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +26,6 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
-
 <body>
     <div id="wrapper">
         <div id="page-banner">
@@ -16,37 +33,27 @@
             <p>Ejercicios Javascript</p>
             <form id="search-ex">
                 <input type="text" placeholder="Buscador de archivos..." />
+                <button type="submit">Buscar</button>
             </form>
         </div>
-
-        <div id="ex-list">
-            <h2 class="title">Ejercicios Terminados</h2>
-            <ul>
-                <li>
-                    <span class="name">Proyecto Juanra</span>
-                    <span class="delete">borrar</span>
-                </li>
-                <li>
-                    <span class="name">index.html</span>
-                    <span class="delete">borrar</span>
-                </li>
-                <li>
-                    <span class="name">Torres de Hanoi</span>
-                    <span class="delete">borrar</span>
-                </li>
-                <li>
-                    <span class="name">Árbol de Directorios</span>
-                    <span class="delete">borrar</span>
+        <div id="tree-container">
+            <ul id="file-tree">
+                <li id="raiz" class="folder">/
+                    <ol class="file">
+                        index.html
+                        <button class="delete">X</button>
+                    </ol>
+                    </ol>
+                    <ol class="node folder">js
+                        <button class="eye-toggle"><img src="/icons/hide.png" height="10px"></i></button>
+                        <button class="add-folder">+</button>
+                        <button class="delete" disabled>X</button>
+                        <ol class="node file">script.js
+                            <button class="delete">X</button>
+                    </ol>
+                    </ol>
                 </li>
             </ul>
-        </div>
-        <form id="add-ex">
-            <label>Ocultar todos los Ejercicios</label><input type="checkbox" id="hide" />
-
-            <input type="text" placeholder="Agregar un Ejercicio..." />
-            <button>Agregar</button>
-        </form>
-
     </div>
 </body>
 </html>
