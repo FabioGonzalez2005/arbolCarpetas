@@ -133,3 +133,29 @@ button:hover:not(:disabled) {
     margin-left: 10px;
     cursor: pointer;
 }
+
+/* Hacer que el botón + y el formulario estén en la misma línea */
+.folder, .node {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Ajustar el formulario para que no ocupe toda la línea */
+#add-folder {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 10px;
+}
+
+/* Evitar que el formulario se muestre siempre */
+#add-folder {
+    display: none; /* por defecto oculto (así lo controlará JS) */
+}
+
+/* Cuando lo actives desde JS puedes añadir esta clase */
+.show-form #add-folder {
+    display: flex !important;
+}
+

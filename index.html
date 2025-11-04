@@ -35,25 +35,37 @@ completará automáticamente, pero solo en caso de que haya una única coinciden
                 <input type="text" placeholder="Buscador de archivos..." />
                 <button type="submit">Buscar</button>
             </form>
+            
         </div>
         <div id="tree-container">
             <ul id="file-tree">
                 <li id="raiz" class="folder">/
-                    <ol class="file">
-                        index.html
-                        <button class="delete">X</button>
-                    </ol>
-                    </ol>
-                    <ol class="node folder">js
                         <button class="eye-toggle"><img src="/icons/hide.png" height="10px"></i></button>
                         <button class="add-folder">+</button>
-                        <button class="delete" disabled>X</button>
-                        <ol class="node file">script.js
+                        <div>
+                            <form id="add-folder">
+                                <input type="text" placeholder="Introduce nombre..." />
+                                <select name="select">
+                                    <option value="folderValue">Carpeta</option>
+                                    <option value="fileValue" selected>Archivo</option>
+                                </select>
+                                <button type="add">Añadir</button>
+                                <button type="cancel">Cancelar</button>
+                            </form>
+                        </div>
+                        <ol class="node file">index.html
                             <button class="delete">X</button>
-                    </ol>
-                    </ol>
+                        </ol>
+                        <ol class="node folder">js
+                            <button class="eye-toggle"><img src="/icons/hide.png" height="10px"></i></button>
+                            <button class="add-folder">+</button>
+                            <button class="delete" disabled>X</button>
+                            <ol class="node file">script.js
+                                <button class="delete">X</button>
+                        </ol>
                 </li>
             </ul>
+        </div>
     </div>
 </body>
 </html>
