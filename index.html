@@ -40,9 +40,10 @@ completará automáticamente, pero solo en caso de que haya una única coinciden
         <div id="tree-container">
             <ul id="file-tree">
                 <li id="raiz" class="folder">/
+                    <div class="row-folder">
                         <button class="eye-toggle"><img src="/icons/hide.png" height="10px"></i></button>
                         <button class="add-folder">+</button>
-                        <div>
+                        <div class ="form-container">
                             <form id="add-folder">
                                 <input type="text" placeholder="Introduce nombre..." />
                                 <select name="select">
@@ -53,16 +54,22 @@ completará automáticamente, pero solo en caso de que haya una única coinciden
                                 <button type="cancel">Cancelar</button>
                             </form>
                         </div>
-                        <ol class="node file">index.html
-                            <button class="delete">X</button>
-                        </ol>
-                        <ol class="node folder">js
-                            <button class="eye-toggle"><img src="/icons/hide.png" height="10px"></i></button>
-                            <button class="add-folder">+</button>
-                            <button class="delete" disabled>X</button>
-                            <ol class="node file">script.js
+                    </div>
+                        <ul class="hijos">
+                            <li class="node file">index.html
                                 <button class="delete">X</button>
-                        </ol>
+                            </li>
+                            <li class="node folder">js
+                                <button class="eye-toggle"><img src="/icons/hide.png" height="10px"></i></button>
+                                <button class="add-folder">+</button>
+                                <button class="delete" disabled>X</button>
+                                <ul class="hijos">
+                                    <li class="node file">script.js
+                                        <button class="delete">X</button>
+                                    </li>
+                                </ul>
+
+                        </ul>
                 </li>
             </ul>
         </div>

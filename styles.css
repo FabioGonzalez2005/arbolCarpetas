@@ -135,7 +135,7 @@ button:hover:not(:disabled) {
 }
 
 /* Hacer que el botón + y el formulario estén en la misma línea */
-.folder, .node {
+.folder > .node {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -159,3 +159,9 @@ button:hover:not(:disabled) {
     display: flex !important;
 }
 
+
+.row-folder {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
